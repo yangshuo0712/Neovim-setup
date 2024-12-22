@@ -10,8 +10,8 @@ return
                 mode = "buffers",
                 offsets = {
                     {
-                        filetype = "NvimTree",
-                        text = "NvimTree",
+                        filetype = "neo-tree",
+                        text = "File Explorer",
                         text_align = "center",
                         separator = true,
                     }
