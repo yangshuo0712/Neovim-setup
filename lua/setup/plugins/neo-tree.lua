@@ -11,6 +11,7 @@ return
     config = function()
         local neotree = require("neo-tree")
         neotree.setup({
+            popup_border_style = "single",
             window = {
                 mapping_options = {
                     noremap = true,
@@ -86,5 +87,5 @@ return
             },
         })
     end,
-    vim.keymap.set('n', '<leader>ee', ':Neotree toggle<CR>', {noremap = true, silent = true})
+    vim.keymap.set('n', '<leader>e', ':Neotree toggle<CR>', {noremap = true, silent = true})
 }

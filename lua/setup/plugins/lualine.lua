@@ -4,6 +4,10 @@ return
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     config = function()
         local lualine = require('lualine')
-        lualine.setup{}
+        lualine.setup{
+            options = {
+                theme = "catppuccin",
+            },
+        }
     end,
 }
