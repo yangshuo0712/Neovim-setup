@@ -9,6 +9,7 @@ keymap.set("v", "J", ":m '>+1<CR>gv=gv") -- move single line
 keymap.set("v", "K", ":m '<-2<CR>gv=gv") -- move multi-line
 keymap.set("v", "H", "^") -- move cursor to line ending
 keymap.set("v", "L", "$") -- move cursor to line begining
+keymap.set("v", "<C-e>", "%")
 
 --normal mode
 keymap.set("n", "ii", "I") -- insert at the begining
@@ -21,6 +22,7 @@ keymap.set("n", "dL", "d$") -- delete text between cursor and line ending
 keymap.set("n", "dH", "d^") -- delete text between cursor and line begining
 keymap.set("n", "yL", "y$") -- copy text between cursor and line ending
 keymap.set("n", "yH", "y^") -- copy text between cursor and line begining
+keymap.set("n", "<C-e>", "%")
 
 keymap.set("n", "<leader>sa", "ggVG") -- select all
 keymap.set("n", "<leader>nh", ":nohl<CR>") -- cancel highlight
@@ -28,6 +30,7 @@ keymap.set("n", "<leader>nh", ":nohl<CR>") -- cancel highlight
 keymap.set("n", "<leader>sv", "<C-w>v") -- split window vertical
 keymap.set("n", "<leader>sh", "<C-w>s") -- split window horizontal
 
+keymap.set("n", "<C-w>q", "<Cmd>bd<CR>") -- split window horizontal
 --chage the height of window
 keymap.set('n', '<A-h>', '<Cmd>vertical resize -2<CR>', {noremap = true, silent = true})
 keymap.set('n', '<A-l>', '<Cmd>vertical resize +2<CR>', {noremap = true, silent = true})
@@ -43,4 +46,14 @@ keymap.set('n', '<C-b>c', ':BufferLineCloseOthers<CR>', {noremap = true, silent 
 -- terminal mode
 -- NOTE: this doesn't work in terminal emulators/tmux/etc
 -- Now just using <C-\><C-n> to exit terminal mode
-keymap.set("t", "<esc><esc>", "<C-\\><C-n>", {noremap = true}) -- turn to normal mode in terminal
+-- keymap.set("t", "<esc><esc>", "<C-\\><C-n>", {noremap = true}) -- turn to normal mode in terminal
+function _G.set_terminal_keymaps()
+    local opts = {buffer = 0}
+    vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
+    vim.keymap.set('t', 'jk', [[<C-\><C-n>]], opts)
+    vim.keymap.set('t', '<C-h>', [[<Cmd>wincmd h<CR>]], opts)
+    vim.keymap.set('t', '<C-j>', [[<Cmd>wincmd j<CR>]], opts)
+    vim.keymap.set('t', '<C-k>', [[<Cmd>wincmd k<CR>]], opts)
+    vim.keymap.set('t', '<C-l>', [[<Cmd>wincmd l<CR>]], opts)
+    vim.keymap.set('t', '<C-w>', [[<C-\><C-n><C-w>]], opts)
+end

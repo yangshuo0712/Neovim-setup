@@ -13,6 +13,7 @@ return
         neotree.setup({
             popup_border_style = "single",
             window = {
+                position = "float",
                 mapping_options = {
                     noremap = true,
                     nowait = true,
@@ -62,7 +63,6 @@ return
             },
             git_status = {
                 window = {
-                    position = "float",
                     mappings = {
                         ["A"]  = "git_add_all",
                         ["gu"] = "git_unstage_file",

@@ -15,7 +15,7 @@ return {
                 borderchars = {'─', '│', '─', '│', '┌', '┐', '┘', '└'},
                 layout_strategy = 'vertical',
                 layout_config = { height = 0.8 },
-                winblend = 5,
+                -- winblend = 5,
             },
             pickers = {
                 find_files = {

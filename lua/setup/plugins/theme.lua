@@ -9,18 +9,6 @@ return {
         end,
     },
     {
-        'projekt0n/github-nvim-theme',
-        name = 'github-theme',
-        lazy = false,
-        priority = 1000,
-        config = function()
-            require('github-theme').setup({
-            -- ...
-            })
-            --vim.cmd('colorscheme github_dark')
-        end,
-    },
-    {
         "folke/tokyonight.nvim",
         lazy = false,
         priority = 1000,
@@ -34,7 +22,14 @@ return {
         name = "catppuccin",
         priority = 1000,
         config = function()
-            --vim.cmd[[colorscheme catppuccin]]
+            -- vim.cmd[[colorscheme catppuccin]]
         end,
     },
+    {
+        "rose-pine/neovim",
+        name = "rose-pine",
+        config = function()
+            -- vim.cmd("colorscheme rose-pine-moon")
+        end,
+    }
 }
