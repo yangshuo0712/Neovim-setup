@@ -1,6 +1,7 @@
 local opt = vim.opt
 opt.encoding = "utf-8"
 opt.fileencoding = "utf-8"
+-- opt.ambiwidth = "double"
 opt.termguicolors = true
 opt.relativenumber = true --line number
 opt.number = true

@@ -5,7 +5,7 @@ return {
         priority = 1000,
         build = ':EvaCompile',
         config = function()
-            --vim.cmd('colo Eva-Dark')
+            -- vim.cmd('colo Eva-Dark')
         end,
     },
     {
@@ -14,7 +14,7 @@ return {
         priority = 1000,
         opts = {},
         config = function()
-            vim.cmd('colorscheme tokyonight-night')
+            vim.cmd('colorscheme tokyonight-storm')
         end
     },
     {
@@ -22,14 +22,28 @@ return {
         name = "catppuccin",
         priority = 1000,
         config = function()
-            -- vim.cmd[[colorscheme catppuccin]]
+            local catppuccin = require("catppuccin")
+            catppuccin.setup{
+                integrations = {
+                    copilot_vim = true,
+                },
+            }
+            -- vim.cmd('colorscheme catppuccin-macchiato')
         end,
     },
     {
         "rose-pine/neovim",
         name = "rose-pine",
         config = function()
+            local rose_pine = require("rose-pine")
+            rose_pine.setup({
+                extend_background_behind_borders = true,
+                styles = {
+                    bold = false,
+                    italic = false,
+                },
+            })
             -- vim.cmd("colorscheme rose-pine-moon")
-        end,
-    }
+        end
+    },
 }

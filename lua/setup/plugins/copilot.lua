@@ -1,15 +1,18 @@
 return {
     {
         "github/copilot.vim",
+        config = function()
+            vim.g.copilot_enabled = false
+        end,
     },
     {
         "CopilotC-Nvim/CopilotChat.nvim",
         dependencies = {
-          { "github/copilot.vim" },
-          { "nvim-lua/plenary.nvim"}
+            { "github/copilot.vim" },
+            { "nvim-lua/plenary.nvim"}
         },
-        build = "make tiktoken", -- Only on MacOS or Linux
         opts = {
+            highlight_selection = false,
             auto_follow_cursor = false,
             mappings = {
                 complete = {
@@ -17,10 +20,10 @@ return {
                 },
             },
             window = {
-                layout = 'float',
+                layout = 'vertical',
                 relative = 'editor',
-                height =0.8,
-                width = 0.8,
+                height =0.5,
+                width = 0.5,
                 row = nil,
                 col = nil,
             },
