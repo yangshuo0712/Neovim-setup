@@ -5,6 +5,10 @@ return {
         'nvim-lua/plenary.nvim',
     },
     config = function()
+        local colors = {
+            bg = '#000000',
+            fg = '#808080',
+        }
         local telescope = require('telescope')
         local builtin = require('telescope.builtin')
         telescope.setup{
@@ -27,10 +31,10 @@ return {
         vim.keymap.set('n', '<leader>fg', builtin.live_grep, {desc = 'telescope live grep'})
         vim.keymap.set('n', '<leader>fb', builtin.buffers, {desc = 'telescope buffers'})
         vim.keymap.set('n', '<leader>fh', builtin.help_tags, {desc = 'telescope help tags'})
+
         telescope.load_extension('fzf')
 
-        --vim.api.nvim_set_hl(0, "TelescopePreviewNormal", { bg = "#1e1e2e", fg = "#cdd6f4" })
-        --vim.api.nvim_set_hl(0, "TelescopePreviewBorder", { fg = "#808080" })
-        --vim.api.nvim_set_hl(0, "TelescopePreviewTitle", { fg = "#808080" })
+        -- vim.api.nvim_set_hl(0, "TelescopeBorder", { fg = colors.fg, bg = colors.bg })
+        -- vim.api.nvim_set_hl(0, "TelescopePromptBorder", { fg = colors.fg, bg = colors.bg })
     end,
 }

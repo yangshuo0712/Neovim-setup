@@ -21,3 +21,5 @@ opt.splitbelow = true
 
 opt.ignorecase = true --search
 opt.smartcase = true
+
+opt.cmdheight = 0 --bottom cmd line

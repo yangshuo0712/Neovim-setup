@@ -13,7 +13,8 @@ return
         neotree.setup({
             popup_border_style = "single",
             window = {
-                position = "float",
+                width = 30,
+                position = "left",
                 mapping_options = {
                     noremap = true,
                     nowait = true,
